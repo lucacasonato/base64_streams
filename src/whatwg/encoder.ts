@@ -25,7 +25,7 @@ export class Base64EncoderStream extends TransformStream<Uint8Array, string> {
           chunk = chunk.subarray(0, chunk.length - remainder);
         }
 
-        controller.enqueue(chunk.toBase64());
+        if (chunk.length > 0) controller.enqueue(chunk.toBase64());
       },
       flush: (controller) => {
         if (this.#extraLength > 0) {

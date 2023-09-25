@@ -9,7 +9,18 @@ sync-Iterator based API available.
 
 You can see the implementations for the various APIs in:
 
-- [`Base64Decoder` WHATWG TransformStream](./src/whatwg/decoder.ts)
-- [`Base64Encoder` WHATWG TransformStream](./src/whatwg/encoder.ts)
+- [`Base64DecoderStream` WHATWG TransformStream](./src/whatwg/decoder.ts)
+- [`Base64EncoderStream` WHATWG TransformStream](./src/whatwg/encoder.ts)
 - [`decodeBase64()` sync iterator](./src/iterator/decoder.ts)
 - [`encodeBase64()` sync iterator](./src/iterator/encoder.ts)
+
+To play with it:
+
+```
+$ deno repl -A --eval="import { Base64DecoderStream, Base64EncoderStream, decodeBase64, encodeBase64 } from './index.ts'"
+Deno 1.37.0
+exit using ctrl+d, ctrl+c, or close()
+>
+```
+
+To run tests, run `deno test`.
